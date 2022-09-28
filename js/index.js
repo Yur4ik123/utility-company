@@ -1,7 +1,7 @@
 var mobileMenu = new MobileSwipeMenu('#menu', {
     mode: 'right',
     width:310,
-    enableBodyHook: true,
+    enableBodyHook: false,
     events: {
         opened: function () {
         },
@@ -11,12 +11,18 @@ var mobileMenu = new MobileSwipeMenu('#menu', {
         }
     }
 });
+
+window.scroll =  (blockID)=>{
+    event.preventDefault();
+    document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    })
+}
 document.getElementById('openMenu').addEventListener('click', function () {
     mobileMenu.openMenu();
 });
 document.getElementById('closeMenu').addEventListener('click', function () {
     mobileMenu.closeMenu();
 });
-// document.getElementById('toggleMenu').addEventListener('click', function () {
-//     mobileMenu.toggleMenu();
-// });
+
