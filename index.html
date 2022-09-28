@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+          href="style/style.css">
+    <title>Document</title>
+
+</head>
+<body>
+<body>
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApXOUbl11H3unbJU9RiBC0IOOQ-2zmMXg&callback=initMap">
+</script>
+<script>
+    let map;
+
+    function initMap() {
+        const image = "./img/marker.svg";
+        let stylesArray = [
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#e9e9e9"
+                    },
+                    {
+                        "lightness": 17
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    },
+                    {
+                        "lightness": 20
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 17
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 29
+                    },
+                    {
+                        "weight": 0.2
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 18
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 16
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    },
+                    {
+                        "lightness": 21
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#dedede"
+                    },
+                    {
+                        "lightness": 21
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 16
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "saturation": 36
+                    },
+                    {
+                        "color": "#333333"
+                    },
+                    {
+                        "lightness": 40
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2"
+                    },
+                    {
+                        "lightness": 19
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#fefefe"
+                    },
+                    {
+                        "lightness": 20
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#fefefe"
+                    },
+                    {
+                        "lightness": 17
+                    },
+                    {
+                        "weight": 1.2
+                    }
+                ]
+            }
+        ]
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: {lat: 49.953076, lng: 36.0477475},
+            zoom: 12,
+            styles: stylesArray,
+            disableDefaultUI: true,
+        });
+        const marker = new google.maps.Marker({
+            position: {lat: 49.953076, lng: 36.0477475},
+            map: map,
+            icon: image,
+        });
+    }
+
+</script>
+
+
+
+<div id="app">
+    <header class="header">
+        <div class="container">
+            <div class="header-title">
+                <div class="mobile-menu__btn " style="display: none" id="openMenu">
+                    <img src="./img/menu.svg" width="32" height="32" alt="">
+                </div>
+                <div class="header-title__content">
+                    Комунальне підприємство<br>
+                    <b>“Пісочинське виробниче управління житлово-комунального господарства”</b>
+                </div>
+            </div>
+            <nav class="header-nav" >
+                <ul class="header-nav__list">
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Про нас
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Документи </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Графік вивезення ТПВ
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="head-section">
+        <div class="container">
+            <div class="head-section__title">
+                <div class="head-section__label">
+                    Офіційний сайт
+                </div>
+                <div class="head-section__content">
+                    <p> Якісна <span>житлово-коммунальна послуга</span> - запорука вашого комфорту</p>
+                </div>
+            </div>
+            <div class="head-section__img">
+                <picture>
+                    <source srcset="./img/main.webp" type="image/webp">
+                    <img src="./img/main.png" width="821" height="537" alt="">
+                </picture>
+            </div>
+
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="container --svg__arr-down-before">
+            <div class="section-header">
+                Про нас
+            </div>
+            <div class="about-section__content">
+                <p>
+                    <b>Комунальне підприємство Пісочинське ВУЖКГ</b> засноване на комунальній власності, що є власністю
+                    територіальної громади селища Пісочин Харківського району Харківської області і підпорядковане
+                    Пісочинській селищній раді та є частиною об’єднаної територіальної громади, має власний
+                    розрахунковий рахунок та є платником податку на додану вартість
+                    Підприємство здійснює свою діяльність на основі і відповідно до Конституції України, Цивільного
+                    кодексу України, Закону України «Про місцеве самоврядування в Україні» Закону України «Про
+                    житлово-комунальні послуги», постанов Кабінету Міністрів України, Наказів Мінрегіонрозвитку та інших
+                    нормативних документів чинного законодавства України.
+                </p>
+                    <b> Господарська діяльність підприємства полягає у:</b>
+
+                <ul>
+                    <li>
+                        - наданні послуг з вивезення твердих побутових відходів;
+
+                    </li>
+                    <li>
+                        - утриманні, експлуатації і обслуговування об’єктів житлового фонду, нежитлових приміщень,
+                        інженерних комунікацій та споруд; Комунальне підприємство обслуговує 18 багатоповерхових
+                        будинків, надає послуги з вивезення твердих побутових відходів 291 юридичній особі і фізичним
+                        особам-підприємцям та 8 327 приватних домоволодінь та житлово-будівельних кооперативів.
+
+                    </li>
+                    <li>
+                        - здійсненні єдиної політики селищної Ради в розвитку житлового комплексу та соціальної
+                        інфраструктури
+
+                    </li>
+                    <li>
+                        - освоєнні та впровадженні найновіших досягнень науково-технічного прогресу та передового
+                        досвіду у комунальне господарство;
+
+                    </li>
+                    <li>
+                        - забезпеченні потреб громадян, підприємств та організацій у комунальних послугах
+
+                    </li>
+                    <li>
+                        - створенні та розширення матеріальної бази місцевого самоврядування.
+                    </li>
+                </ul>
+                <p>
+                    Рішенням Пісочинської селищної ради № 12/13-2018 від 04 грудня 2018 року, з метою задоволення потреб
+                    мешканців об’єднання територіальної громади Пісочинської селищної ради з приводу надання послуг з
+                    вивезення твердих побутових відходів на території Пісочинської селищної ради К.П. Пісочинське ВУЖКГ
+                    визнано виконавцем послуг з вивезення твердих побутових відходів на території одноквартирних
+                    житлових будинків (приватних домоволодінь), підприємств, установ, організацій та інших суб’єктів
+                    господарювання.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <section id="docs" class="docs-section">
+        <div class="container">
+            <div class="section-header">
+                Документи
+            </div>
+            <div class="docs-section__group">
+                <div class="docs-section__name">
+                    Договори
+                </div>
+                <div class="docs-section__document">
+                    <a href="" class="docs-document__link">
+                        <span class="doc-link__img --svg__pdf">
+
+                        </span>
+                        <span class="doc-link__title">
+Публічний індивідуальний договір
+                        </span>
+                    </a>
+                    <a href="" class="docs-document__link">
+                        <span class="doc-link__img --svg__pdf">
+
+                        </span>
+                        <span class="doc-link__title">
+Заява приєднання
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="docs-section__group">
+                <div class="docs-section__name">
+                    Рішення
+                </div>
+                <div class="docs-section__document">
+                    <a href="" class="docs-document__link">
+                        <span class="doc-link__img --svg__pdf"></span>
+                        <span class="doc-link__title">
+                            Рішення виконавчого комітету Пісочинської селищної ради від 31.01.2022 року
+                        </span>
+                    </a>
+                    <a href="" class="docs-document__link">
+                        <span class="doc-link__img --svg__pdf"></span>
+                        <span class="doc-link__title">
+                           Рішення виконавчого комітету Пісочинської селищної ради від 31.01.2022 року
+                        </span>
+                    </a>
+                    <a href="" class="docs-document__link">
+                        <span class="doc-link__img --svg__pdf"></span>
+                        <span class="doc-link__title">
+         Рішення виконавчого комітету Пісочинської селищної ради від 14.01.2022 року
+                        </span>
+                    </a>
+                    <a href="" class="docs-document__link">
+                        <span class="doc-link__img --svg__pdf"></span>
+                        <span class="doc-link__title">
+Рішення виконавчого комітету Пісочинської селищної ради від 05.01.2022 року                        </span>
+                    </a>
+                    <a href="" class="docs-document__link">
+                        <span class="doc-link__img --svg__pdf"></span>
+                        <span class="doc-link__title">
+Рішення виконавчого комітету Пісочинської селищної ради від 21.12.2021 року                        </span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="graph" class="graph-section">
+        <div class="container">
+            <div class="graph-section__content">
+                <div class="graph-section__header">
+                    Графік вивезення ТПВ
+                </div>
+                <div class="btn-wrapper">
+                    <a href="" class="graph-section__btn">Дивитись документ</a>
+                </div>
+
+            </div>
+            <div class="graph-section__img">
+
+                <picture>
+                    <source media="(max-width:768px )" srcset="./img/grap-mob.png">
+                    <source srcset="./img/graph.webp" type="image/webp">
+                    <img src="./img/graph.png" width="756" height="380" alt="">
+                </picture>
+            </div>
+
+        </div>
+    </section>
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <div class="contacts-wrapper">
+                <div class="contacts-left__side">
+                    <div class="contacts-brand__name">
+                        Комунальне підприємство <br>
+                        <b>“Пісочинське виробниче управління житлово-комунального господарства”</b>
+                    </div>
+                    <div class="contact__row">
+                        <div class="contact-row__title">
+                            Email:
+                        </div>
+                        <div class="contact-row__content">
+                            <a href="mailto:pesochinpuzhkh@ukr.net" class="contact-email">
+                                pesochinpuzhkh@ukr.net
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact__row">
+                        <div class="contact-row__title">
+                            Адреса:
+                        </div>
+                        <div class="contact-row__content">
+                            <p>
+                                Україна, 62416, Харківська обл., Харківський р-н, смт. Пісочин, вул. Квартальна, буд. 5/9)
+                            </p>
+                        </div>
+                    </div>
+                    <div id="map"></div>
+                </div>
+                <div class="contacts-right__side">
+                    <div class="section-header">
+                        Контакти
+                    </div>
+                    <div class="contacts-rows__wrapper">
+                        <div class="contact-group">
+                            <div class="contact-group__title">
+                                Начальник
+                            </div>
+                            <div class="contact-group__content">
+                                <p>Федотова Вікторія Володимирівна</p>
+                                <a href="tel:+380734652643" class="contact-item">
+                                    <span class="contact-icon --svg__telephone-call-1"></span>
+                                    <span class="contact-title">073-465-26-43</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-group">
+                            <div class="contact-group__title">
+                                Головний інженер
+                            </div>
+                            <div class="contact-group__content">
+                                <p>Коденко Віталій Іванович</p>
+                                <a href="tel:+380682862526" class="contact-item">
+                                    <span class="contact-icon --svg__telephone-call-1"></span>
+                                    <span class="contact-title">068-286-25-26</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-group">
+                            <div class="contact-group__title">
+                                Черговий <br>
+                                Слюсар-сантехник
+                            </div>
+                            <div class="contact-group__content">
+                                <a href="tel:+380688968058" class="contact-item">
+                                    <span class="contact-icon --svg__telephone-call-1"></span>
+                                    <span class="contact-title">068-896-80-58</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-group">
+                            <div class="contact-group__title">
+                                Черговий
+                            </div>
+                            <div class="contact-group__content">
+                                <a href="tel:7421108" class="contact-item">
+                                    <span class="contact-icon --svg__telephone-call-1"></span>
+                                    <span class="contact-title">742-11-08</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-group socnetw">
+                            <div class="contact-group__title">
+                                Соцмережi
+                            </div>
+                            <div class="contact-group__content">
+                                <a href="" class="facebook-link">
+                                    <span class="contact-icon --svg__facebook"></span>
+                                    <span class="contact-title">Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">Харків 2022</div>
+            <div class="creator">Створення сайту <a href="https://webakula.ua/" target="_blank" class="wa_logo --svg__wa"></a></div>
+        </div>
+    </footer>
+    <div class="mobile-menu" id="menu">
+        <div class="menu-wrapper">
+        <div class="close-btn" id="closeMenu">
+            <img src="./img/clsoe.svg" width="24" height="24" alt="">
+        </div>
+        <div class="mob-menu__wrapper">
+            <nav class="header-nav" >
+                <div class="menu-title">Меню</div>
+                <ul class="header-nav__list">
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Про нас
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Документи </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Графік вивезення ТПВ
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">
+                            Контакти
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mob-img">
+                <img src="./img/mob-menu.png" width="217" height="230" alt="">
+            </div>
+        </div>
+
+    </div></div>
+</div>
+<script src="js/mobile-swipe-menu.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</body>
+</html>
