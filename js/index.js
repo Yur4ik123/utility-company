@@ -18,6 +18,7 @@ window.scroll =  (blockID)=>{
         behavior: 'smooth',
         block: 'start'
     })
+    mobileMenu.closeMenu();
 }
 document.getElementById('openMenu').addEventListener('click', function () {
     mobileMenu.openMenu();
