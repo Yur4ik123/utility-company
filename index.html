@@ -8,7 +8,7 @@
     <link rel="stylesheet"
           href="style/style.css">
     <title>Комунальне підприємство “Пісочинське виробниче управління житлово-комунального господарства”</title>
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 <body>
@@ -220,28 +220,28 @@
                 <div class="mobile-menu__btn " style="display: none" id="openMenu">
                     <img src="./img/menu.svg" width="32" height="32" alt="">
                 </div>
-                <div class="header-title__content">
+                <div class="header-title__content" data-aos="fade-in">
                     Комунальне підприємство<br>
                     <b>“Пісочинське виробниче управління житлово-комунального господарства”</b>
                 </div>
             </div>
             <nav class="header-nav" >
                 <ul class="header-nav__list">
-                    <li class="header-nav__item">
+                    <li class="header-nav__item"  data-aos="fade-left">
                         <a href="#" onclick="window.scroll('about')" class="header-nav__link">
                             Про нас
                         </a>
                     </li>
-                    <li class="header-nav__item">
+                    <li class="header-nav__item" data-aos="fade-left">
                         <a href="#" onclick="window.scroll('docs')" class="header-nav__link">
                             Документи </a>
                     </li>
-                    <li class="header-nav__item">
+                    <li class="header-nav__item" data-aos="fade-left">
                         <a href="#" onclick="window.scroll('graph')"  class="header-nav__link">
                             Графік вивезення ТПВ
                         </a>
                     </li>
-                    <li class="header-nav__item">
+                    <li class="header-nav__item" data-aos="fade-left">
                         <a href="#" onclick="window.scroll('contacts')"  class="header-nav__link">
                             Контакти
                         </a>
@@ -253,14 +253,14 @@
     <section class="head-section">
         <div class="container">
             <div class="head-section__title">
-                <div class="head-section__label">
+                <div class="head-section__label" data-aos="fade-down">
                     Офіційний сайт
                 </div>
-                <div class="head-section__content">
+                <div class="head-section__content" data-aos="fade-right">
                     <p> Якісна <span>житлово-коммунальна послуга</span> - запорука вашого комфорту</p>
                 </div>
             </div>
-            <div class="head-section__img">
+            <div class="head-section__img" data-aos="fade-in">
                 <picture>
                     <source srcset="./img/main.webp" type="image/webp">
                     <img src="./img/main.png" width="821" height="537" alt="">
@@ -271,10 +271,10 @@
     </section>
     <section id="about" class="about-section">
         <div class="container --svg__arr-down-before">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 Про нас
             </div>
-            <div class="about-section__content">
+            <div class="about-section__content" data-aos="fade-up">
                 <p>
                     <b>Комунальне підприємство Пісочинське ВУЖКГ</b> засноване на комунальній власності, що є власністю
                     територіальної громади селища Пісочин Харківського району Харківської області і підпорядковане
@@ -331,14 +331,14 @@
     </section>
     <section id="docs" class="docs-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 Документи
             </div>
             <div class="docs-section__group">
-                <div class="docs-section__name">
+                <div class="docs-section__name" data-aos="fade-up">
                     Договори
                 </div>
-                <div class="docs-section__document">
+                <div class="docs-section__document" data-aos="fade-up">
                     <a href="./pdf/doc1.pdf" target="_blank"  class="docs-document__link">
                         <span class="doc-link__img --svg__pdf">
 
@@ -375,10 +375,10 @@
                 </div>
             </div>
             <div class="docs-section__group">
-                <div class="docs-section__name">
+                <div class="docs-section__name" data-aos="fade-up">
                     Рішення
                 </div>
-                <div class="docs-section__document">
+                <div class="docs-section__document" data-aos="fade-up">
                     <a href="./pdf/Decision_of_the_Executive_Committee_№_1439_21_from_12_08_2021_About_definition.pdf" target="_blank" class="docs-document__link">
                         <span class="doc-link__img --svg__pdf"></span>
                         <span class="doc-link__title">
@@ -431,15 +431,15 @@
     <section id="graph" class="graph-section">
         <div class="container">
             <div class="graph-section__content">
-                <div class="graph-section__header">
+                <div class="graph-section__header" data-aos="fade-right">
                     Графік вивезення ТПВ
                 </div>
-                <div class="btn-wrapper">
+                <div class="btn-wrapper" data-aos="fade-right">
                     <a href="./pdf/graphic.pdf" target="_blank" class="graph-section__btn">Дивитись документ</a>
                 </div>
 
             </div>
-            <div class="graph-section__img">
+            <div class="graph-section__img" data-aos="fade-left">
 
                 <picture>
                     <source media="(max-width:768px )" srcset="./img/grap-mob.png">
@@ -450,7 +450,7 @@
 
         </div>
     </section>
-    <section id="contacts" class="contacts">
+    <section id="contacts" class="contacts" data-aos="fade-up">
         <div class="container">
             <div class="contacts-wrapper">
                 <div class="contacts-left__side">
@@ -538,7 +538,7 @@
                                 Соцмережi
                             </div>
                             <div class="contact-group__content">
-                                <a href="" class="facebook-link">
+                                <a href="https://www.facebook.com/groups/649276972319608/" target="_blank" class="facebook-link">
                                     <span class="contact-icon --svg__facebook"></span>
                                     <span class="contact-title">Facebook</span>
                                 </a>
@@ -549,7 +549,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" >
         <div class="container">
             <div class="copyright">Харків 2022</div>
             <div class="creator">Створення сайту <a href="https://webakula.ua/" target="_blank" class="wa_logo --svg__wa"></a></div>
@@ -593,8 +593,14 @@
     </div></div>
 </div>
 <script src="js/mobile-swipe-menu.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="js/index.js"></script>
-
+<script>
+    AOS.init({
+        once: true,
+        offset: 200
+    });
+</script>
 </body>
 </body>
 </html>
